@@ -3,7 +3,7 @@ import { Shell, Play, Waves } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen bg-gradient-to-br from-seashell-blush via-white to-seashell-blush overflow-hidden">
+    <section id="hero" className="hero-underwater relative min-h-screen bg-gradient-to-br from-seashell-blush via-white to-seashell-blush overflow-hidden">
       {/* Floating Bubbles Animation */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="bubble bubble-1"></div>
@@ -12,6 +12,8 @@ const Hero = () => {
         <div className="bubble bubble-4"></div>
         <div className="bubble bubble-5"></div>
         <div className="bubble bubble-6"></div>
+        <div className="bubble bubble-7"></div>
+        <div className="bubble bubble-8"></div>
       </div>
 
       {/* Wave Animation at Bottom */}
@@ -34,14 +36,14 @@ const Hero = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-stormy-waters mb-6 leading-tight">
-            Where <span className="text-deep-teal">Sound</span> Meets
+            Every Brand Has a Look.
             <br />
-            <span className="text-deep-teal">Strategy</span>
+            Only the <span className="text-deep-teal">Great Ones</span> Have a <span className="text-deep-teal">Sound</span>.
           </h1>
           
           <p className="text-xl md:text-2xl text-stormy-waters/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            We're Sirens - the digital marketing agency that creates unforgettable brand experiences through 
-            <span className="font-semibold text-deep-teal"> custom sound branding</span> and comprehensive digital strategies.
+            We create signature sounds and comprehensive digital experiences that make your brand 
+            <span className="font-semibold text-deep-teal">unforgettable</span> - heard even before it's seen.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">

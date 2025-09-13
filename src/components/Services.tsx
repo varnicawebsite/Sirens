@@ -4,60 +4,53 @@ import { Search, Users, MousePointer, Mail, Palette, Waves, BarChart3, Target } 
 const Services = () => {
   const services = [
     {
-      icon: Waves,
-      title: "Sound Branding",
-      description: "Create unique audio identities that make your brand instantly recognizable across all touchpoints.",
+      icon: Waves, 
+      title: "Brand Theme Song / Audio Identity",
+      description: "Your signature sound that makes your brand instantly recognizable - like Netflix's ta-dum or Apple's ringtone.",
       featured: true,
       color: "from-calypso to-blue-bayoux"
     },
     {
-      icon: Search,
-      title: "Search Engine Optimization",
-      description: "Boost your organic visibility with data-driven SEO strategies that deliver measurable results.",
+      icon: Users,
+      title: "Social Authority Content Creation",
+      description: "Strategic content creation and planning that establishes your brand as the authority in your space.",
       featured: false,
       color: "from-rock-blue to-calypso"
     },
     {
-      icon: Users,
-      title: "Social Media Marketing",
-      description: "Build engaged communities across all platforms with content that resonates and converts.",
+      icon: MousePointer,
+      title: "Cinematic Influence ADS",
+      description: "From concept to camera to CGI - cinematic shoots that captivate and convert your audience.",
       featured: false,
       color: "from-calypso to-rock-blue"
     },
     {
-      icon: MousePointer,
-      title: "Paid Advertising",
-      description: "Maximize ROI with precision-targeted campaigns across Google, Facebook, and emerging platforms.",
+      icon: Target,
+      title: "Faces of Influence",
+      description: "Professional model providing services to give your brand the perfect face and personality.",
       featured: false,
       color: "from-blue-bayoux to-calypso"
     },
     {
-      icon: Mail,
-      title: "Email Marketing",
-      description: "Design automated email sequences that nurture leads and drive consistent revenue growth.",
+      icon: Search,
+      title: "The Visibility Engine",
+      description: "Advanced SEO & Google My Business optimization that puts your brand where it needs to be found.",
       featured: false,
       color: "from-rock-blue to-blue-bayoux"
     },
     {
       icon: Palette,
-      title: "Brand Identity",
-      description: "Develop cohesive visual identities that tell your story and connect with your audience.",
+      title: "Digital Real Estate Redefined",
+      description: "Website design & revamping that transforms your digital presence into a conversion powerhouse.",
       featured: false,
       color: "from-calypso to-lola"
     },
     {
       icon: BarChart3,
-      title: "Analytics & Insights",
-      description: "Transform data into actionable insights that guide strategic decisions and optimize performance.",
+      title: "The Brand Book",
+      description: "Complete brand identity system that ensures consistency across every touchpoint and interaction.",
       featured: false,
       color: "from-blue-bayoux to-rock-blue"
-    },
-    {
-      icon: Target,
-      title: "Conversion Optimization",
-      description: "Maximize your website's potential with systematic testing and optimization strategies.",
-      featured: false,
-      color: "from-calypso to-blue-bayoux"
     }
   ];
 

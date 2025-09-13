@@ -48,7 +48,7 @@ const Header = () => {
               onClick={() => scrollToSection('sound-demos')}
               className="text-stormy-waters hover:text-deep-teal transition-colors font-medium"
             >
-              Sound Demos
+              Why Sound?
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
@@ -92,10 +92,10 @@ const Header = () => {
                 Services
               </button>
               <button 
-                onClick={() => scrollToSection('sound-demos')}
+                onClick={() => scrollToSection('why-sound')}
                 className="block w-full text-left px-4 py-2 text-stormy-waters hover:text-deep-teal transition-colors font-medium"
               >
-                Sound Demos
+                Why Sound?
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
