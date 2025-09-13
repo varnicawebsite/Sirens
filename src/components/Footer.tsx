@@ -156,7 +156,6 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-tidal-teal mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <div className="border-t border-deep-teal mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-seashell-blush text-sm">
             © {currentYear} Sirens Agency. All rights reserved.
           </p>
@@ -178,5 +177,3 @@ const Footer = () => {
 };
 
 export default Footer;
-  )
-}
