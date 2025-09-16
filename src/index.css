@@ -2,161 +2,190 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Oceanic Mystical Theme */
+/* Mystical Oceanic Theme */
 body {
-  background: linear-gradient(135deg, #0B1426 0%, #1A2B47 50%, #2E4A6B 100%);
-  color: #E2E8F0;
+  background: radial-gradient(circle at 25% 25%, rgba(124, 58, 237, 0.1) 0%, transparent 50%), 
+              radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.1) 0%, transparent 50%), 
+              linear-gradient(135deg, #0A0A0F 0%, #1A1B2E 25%, #16213E 50%, #0F3460 75%, #16537E 100%);
+  color: #F8FAFC;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
-/* Mystical Ocean Effects */
+/* Cosmic Starfield Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(248, 250, 252, 0.8), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(6, 182, 212, 0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(139, 92, 246, 0.5), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(248, 250, 252, 0.4), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(6, 182, 212, 0.3), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: starfield-drift 20s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes starfield-drift {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-100px); }
+}
+
+/* Ocean Current Effects */
 .ocean-current {
   position: absolute;
-  width: 200px;
+  width: 300px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.6), transparent);
-  animation: current-flow 15s linear infinite;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.4), rgba(139, 92, 246, 0.3), transparent);
+  animation: current-drift 15s linear infinite;
+  border-radius: 1px;
 }
 
 .ocean-current:nth-child(odd) {
-  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.2), transparent);
   animation-duration: 20s;
 }
 
 /* Floating Mystical Particles */
 .mystical-particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: radial-gradient(circle, rgba(248, 250, 252, 0.8) 0%, rgba(20, 184, 166, 0.4) 100%);
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, rgba(139, 92, 246, 0.4) 100%);
   border-radius: 50%;
-  animation: float-mystical 12s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
+  animation: float-gentle 10s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
 }
 
 .mystical-particle:nth-child(even) {
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.6) 0%, rgba(236, 72, 153, 0.3) 100%);
-  animation-duration: 15s;
-  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+  background: radial-gradient(circle, rgba(248, 250, 252, 0.6) 0%, rgba(6, 182, 212, 0.3) 100%);
+  animation-duration: 12s;
+  box-shadow: 0 0 12px rgba(248, 250, 252, 0.4);
 }
 
 /* Divine Ripple Effects */
 .divine-ripple {
   position: absolute;
-  border: 2px solid rgba(20, 184, 166, 0.3);
+  border: 2px solid rgba(6, 182, 212, 0.3);
   border-radius: 50%;
-  animation: ripple 3s ease-out infinite;
+  animation: ripple-expand 4s ease-out infinite;
 }
 
 .divine-ripple:nth-child(2) {
-  border-color: rgba(99, 102, 241, 0.3);
-  animation-delay: 1s;
+  border-color: rgba(139, 92, 246, 0.3);
+  animation-delay: 1.5s;
 }
 
 .divine-ripple:nth-child(3) {
   border-color: rgba(236, 72, 153, 0.3);
-  animation-delay: 2s;
+  animation-delay: 3s;
 }
 
 /* Mystical Cards */
 .mystical-card {
   background: linear-gradient(135deg, 
-    rgba(248, 250, 252, 0.05) 0%, 
-    rgba(20, 184, 166, 0.05) 50%, 
-    rgba(99, 102, 241, 0.05) 100%);
+    rgba(248, 250, 252, 0.03) 0%, 
+    rgba(6, 182, 212, 0.05) 30%, 
+    rgba(139, 92, 246, 0.03) 70%, 
+    rgba(236, 72, 153, 0.02) 100%);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(248, 250, 252, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(248, 250, 252, 0.1);
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(248, 250, 252, 0.1),
+    0 0 20px rgba(6, 182, 212, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mystical-card:hover {
   background: linear-gradient(135deg, 
-    rgba(248, 250, 252, 0.08) 0%, 
-    rgba(20, 184, 166, 0.08) 50%, 
-    rgba(99, 102, 241, 0.08) 100%);
+    rgba(248, 250, 252, 0.06) 0%, 
+    rgba(6, 182, 212, 0.08) 30%, 
+    rgba(139, 92, 246, 0.06) 70%, 
+    rgba(236, 72, 153, 0.04) 100%);
   transform: translateY(-8px) scale(1.02);
   box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(20, 184, 166, 0.2),
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(6, 182, 212, 0.3),
+    0 0 60px rgba(139, 92, 246, 0.2),
     inset 0 1px 0 rgba(248, 250, 252, 0.2);
+  border-color: rgba(6, 182, 212, 0.4);
 }
 
-/* Divine Buttons */
-.divine-button {
-  background: linear-gradient(135deg, #14B8A6 0%, #6366F1 50%, #EC4899 100%);
+/* Moonlit Buttons */
+.moonlit-button {
+  background: linear-gradient(135deg, #06B6D4 0%, #7C3AED 50%, #EC4899 100%);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(20, 184, 166, 0.3);
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
   transition: all 0.3s ease;
+  border: 1px solid rgba(248, 250, 252, 0.2);
 }
 
-.divine-button::before {
+.moonlit-button::before {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(248, 250, 252, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(248, 250, 252, 0.3), transparent);
   transition: left 0.6s ease;
 }
 
-.divine-button:hover::before {
+.moonlit-button:hover::before {
   left: 100%;
 }
 
-.divine-button:hover {
+.moonlit-button:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(20, 184, 166, 0.4);
+  box-shadow: 
+    0 15px 40px rgba(6, 182, 212, 0.4),
+    0 0 30px rgba(139, 92, 246, 0.3);
 }
 
-/* Gradient Text Effects */
+/* Siren Gradient Text */
 .siren-gradient {
-  background: linear-gradient(135deg, #F8FAFC 0%, #14B8A6 30%, #6366F1 70%, #EC4899 100%);
+  background: linear-gradient(135deg, #F8FAFC 0%, #06B6D4 25%, #7C3AED 50%, #EC4899 75%, #F59E0B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer-divine 4s ease-in-out infinite;
+  animation: shimmer-flow 4s ease-in-out infinite;
   background-size: 300% 300%;
 }
 
-/* Ocean Wave Animation */
-.ocean-wave {
-  position: relative;
-  overflow: hidden;
-}
-
-.ocean-wave::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
-  animation: wave-gentle 8s ease-in-out infinite;
-  pointer-events: none;
-}
-
-/* Mystical Glow Effects */
-.mystical-glow {
+/* Ethereal Glow Effects */
+.ethereal-glow {
   box-shadow: 
-    0 0 20px rgba(20, 184, 166, 0.3),
-    0 0 40px rgba(99, 102, 241, 0.2),
+    0 0 20px rgba(6, 182, 212, 0.3),
+    0 0 40px rgba(139, 92, 246, 0.2),
     0 0 60px rgba(236, 72, 153, 0.1);
+  animation: pearl-glow 3s ease-in-out infinite alternate;
 }
 
-.mystical-glow:hover {
+.ethereal-glow:hover {
   box-shadow: 
-    0 0 30px rgba(20, 184, 166, 0.5),
-    0 0 60px rgba(99, 102, 241, 0.3),
+    0 0 30px rgba(6, 182, 212, 0.5),
+    0 0 60px rgba(139, 92, 246, 0.3),
     0 0 90px rgba(236, 72, 153, 0.2);
+}
+
+/* Siren Logo Animation */
+.siren-logo {
+  animation: siren-dance 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.4));
+}
+
+.siren-logo:hover {
+  animation-duration: 4s;
+  filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.6)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.3));
 }
 
 /* Sound Wave Visualization */
@@ -164,15 +193,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  gap: 4px;
 }
 
 .sound-bar {
   width: 4px;
-  background: linear-gradient(to top, #14B8A6, #6366F1, #EC4899);
+  background: linear-gradient(to top, #06B6D4, #7C3AED, #EC4899);
   border-radius: 2px;
-  animation: wave-gentle 2s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
+  animation: float-gentle 2s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
 }
 
 .sound-bar:nth-child(1) { animation-delay: 0s; height: 20px; }
@@ -192,22 +221,43 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1A2B47;
+  background: #1A1B2E;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #14B8A6, #6366F1);
+  background: linear-gradient(135deg, #06B6D4, #7C3AED);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #6366F1, #EC4899);
+  background: linear-gradient(135deg, #7C3AED, #EC4899);
 }
 
-/* Cosmic Background */
-.cosmic-bg {
-  background: 
-    radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(20, 184, 166, 0.1) 0%, transparent 50%),
-    linear-gradient(135deg, #0B1426 0%, #1A2B47 100%);
+/* Typography */
+.flowing-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.025em;
+  line-height: 1.6;
+}
+
+/* Moonlight Reflection Effect */
+.moonlight-reflection {
+  position: relative;
+  overflow: hidden;
+}
+
+.moonlight-reflection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(248, 250, 252, 0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.moonlight-reflection:hover::after {
+  transform: translateX(100%);
 }
