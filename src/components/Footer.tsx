@@ -36,7 +36,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-vinyl-gradient rounded-full border-2 border-siren-teal flex items-center justify-center animate-vinyl-spin siren-glow">
                 <img 
-                  src="/public/WhatsApp Image 2025-09-15 at 7,36,43 PM-photoaidcom-cropped.jpeg" 
+                  src="/public/SirensLogo.jpeg" 
                   alt="Sirens Logo" 
                   className="w-5 h-5 object-cover rounded-full"
                 />
