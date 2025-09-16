@@ -79,7 +79,7 @@ const Services = () => {
             <div className="vinyl-disc siren-glow">
               <div className="siren-logo-container">
                 <img 
-                  src="/public/WhatsApp Image 2025-09-15 at 7,36,43 PM-photoaidcom-cropped.jpeg" 
+                  src="/public/SirensLogo.jpeg" 
                   alt="Sirens Logo" 
                   className="w-full h-full object-cover"
                 />
@@ -141,7 +141,7 @@ const Services = () => {
             <div className="flex justify-center mb-4">
               <div className="w-12 h-12 bg-vinyl-gradient rounded-full border-2 border-siren-teal flex items-center justify-center animate-vinyl-spin">
                 <img 
-                  src="/public/WhatsApp Image 2025-09-15 at 7,36,43 PM-photoaidcom-cropped.jpeg" 
+                  src="/public/SirensLogo.jpeg" 
                   alt="Sirens Logo" 
                   className="w-6 h-6 object-cover rounded-full"
                 />
