@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mystical Oceanic Theme */
+/* Siren Brand Theme */
 body {
-  background: radial-gradient(circle at 25% 25%, rgba(124, 58, 237, 0.1) 0%, transparent 50%), 
-              radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.1) 0%, transparent 50%), 
-              linear-gradient(135deg, #0A0A0F 0%, #1A1B2E 25%, #16213E 50%, #0F3460 75%, #16537E 100%);
+  background: radial-gradient(circle at 25% 25%, rgba(139, 92, 246, 0.1) 0%, transparent 50%), 
+              radial-gradient(circle at 75% 75%, rgba(20, 184, 166, 0.1) 0%, transparent 50%), 
+              linear-gradient(135deg, #0A0A0F 0%, #16161C 50%, #1A1A1F 100%);
   color: #F8FAFC;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* Cosmic Starfield Background */
+/* Starfield Effect */
 body::before {
   content: '';
   position: fixed;
@@ -22,13 +22,13 @@ body::before {
   height: 100%;
   background-image: 
     radial-gradient(2px 2px at 20px 30px, rgba(248, 250, 252, 0.8), transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(6, 182, 212, 0.6), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(20, 184, 166, 0.6), transparent),
     radial-gradient(1px 1px at 90px 40px, rgba(139, 92, 246, 0.5), transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(248, 250, 252, 0.4), transparent),
-    radial-gradient(2px 2px at 160px 30px, rgba(6, 182, 212, 0.3), transparent);
+    radial-gradient(2px 2px at 130px 80px, rgba(248, 250, 252, 0.4), transparent),
+    radial-gradient(1px 1px at 160px 30px, rgba(20, 184, 166, 0.3), transparent);
   background-repeat: repeat;
   background-size: 200px 100px;
-  animation: starfield-drift 20s linear infinite;
+  animation: starfield-drift 25s linear infinite;
   pointer-events: none;
   z-index: -1;
 }
@@ -38,98 +38,99 @@ body::before {
   100% { transform: translateY(-100px); }
 }
 
-/* Ocean Current Effects */
-.ocean-current {
-  position: absolute;
-  width: 300px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.4), rgba(139, 92, 246, 0.3), transparent);
-  animation: current-drift 15s linear infinite;
-  border-radius: 1px;
-}
-
-.ocean-current:nth-child(odd) {
-  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.2), transparent);
-  animation-duration: 20s;
-}
-
-/* Floating Mystical Particles */
-.mystical-particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, rgba(139, 92, 246, 0.4) 100%);
+/* Vinyl Disc Effect */
+.vinyl-disc {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #1A1A1F 0%, #0A0A0F 100%);
   border-radius: 50%;
-  animation: float-gentle 10s ease-in-out infinite;
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+  border: 3px solid #14B8A6;
+  animation: vinyl-spin 8s linear infinite;
+  box-shadow: 
+    0 0 30px rgba(20, 184, 166, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.mystical-particle:nth-child(even) {
-  background: radial-gradient(circle, rgba(248, 250, 252, 0.6) 0%, rgba(6, 182, 212, 0.3) 100%);
-  animation-duration: 12s;
-  box-shadow: 0 0 12px rgba(248, 250, 252, 0.4);
-}
-
-/* Divine Ripple Effects */
-.divine-ripple {
+.vinyl-disc::before {
+  content: '';
   position: absolute;
-  border: 2px solid rgba(6, 182, 212, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: #14B8A6;
   border-radius: 50%;
-  animation: ripple-expand 4s ease-out infinite;
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.8);
 }
 
-.divine-ripple:nth-child(2) {
-  border-color: rgba(139, 92, 246, 0.3);
-  animation-delay: 1.5s;
+.vinyl-disc::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  border-radius: 50%;
 }
 
-.divine-ripple:nth-child(3) {
-  border-color: rgba(236, 72, 153, 0.3);
-  animation-delay: 3s;
+/* Siren Logo Container */
+.siren-logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
 }
 
-/* Mystical Cards */
-.mystical-card {
+/* Siren Cards */
+.siren-card {
   background: linear-gradient(135deg, 
-    rgba(248, 250, 252, 0.03) 0%, 
-    rgba(6, 182, 212, 0.05) 30%, 
-    rgba(139, 92, 246, 0.03) 70%, 
-    rgba(236, 72, 153, 0.02) 100%);
+    rgba(248, 250, 252, 0.05) 0%, 
+    rgba(20, 184, 166, 0.08) 30%, 
+    rgba(139, 92, 246, 0.05) 70%, 
+    rgba(236, 72, 153, 0.03) 100%);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(6, 182, 212, 0.2);
+  border: 1px solid rgba(20, 184, 166, 0.2);
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(248, 250, 252, 0.1),
-    0 0 20px rgba(6, 182, 212, 0.1);
+    0 0 20px rgba(20, 184, 166, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mystical-card:hover {
+.siren-card:hover {
   background: linear-gradient(135deg, 
-    rgba(248, 250, 252, 0.06) 0%, 
-    rgba(6, 182, 212, 0.08) 30%, 
-    rgba(139, 92, 246, 0.06) 70%, 
-    rgba(236, 72, 153, 0.04) 100%);
+    rgba(248, 250, 252, 0.08) 0%, 
+    rgba(20, 184, 166, 0.12) 30%, 
+    rgba(139, 92, 246, 0.08) 70%, 
+    rgba(236, 72, 153, 0.05) 100%);
   transform: translateY(-8px) scale(1.02);
   box-shadow: 
     0 20px 60px rgba(0, 0, 0, 0.5),
-    0 0 40px rgba(6, 182, 212, 0.3),
+    0 0 40px rgba(20, 184, 166, 0.3),
     0 0 60px rgba(139, 92, 246, 0.2),
     inset 0 1px 0 rgba(248, 250, 252, 0.2);
-  border-color: rgba(6, 182, 212, 0.4);
+  border-color: rgba(20, 184, 166, 0.4);
 }
 
-/* Moonlit Buttons */
-.moonlit-button {
-  background: linear-gradient(135deg, #06B6D4 0%, #7C3AED 50%, #EC4899 100%);
+/* Siren Buttons */
+.siren-button {
+  background: linear-gradient(135deg, #14B8A6 0%, #8B5CF6 50%, #EC4899 100%);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 8px 25px rgba(20, 184, 166, 0.3);
   transition: all 0.3s ease;
   border: 1px solid rgba(248, 250, 252, 0.2);
 }
 
-.moonlit-button::before {
+.siren-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -140,56 +141,29 @@ body::before {
   transition: left 0.6s ease;
 }
 
-.moonlit-button:hover::before {
+.siren-button:hover::before {
   left: 100%;
 }
 
-.moonlit-button:hover {
+.siren-button:hover {
   transform: translateY(-2px) scale(1.05);
   box-shadow: 
-    0 15px 40px rgba(6, 182, 212, 0.4),
+    0 15px 40px rgba(20, 184, 166, 0.4),
     0 0 30px rgba(139, 92, 246, 0.3);
 }
 
 /* Siren Gradient Text */
-.siren-gradient {
-  background: linear-gradient(135deg, #F8FAFC 0%, #06B6D4 25%, #7C3AED 50%, #EC4899 75%, #F59E0B 100%);
+.siren-text-gradient {
+  background: linear-gradient(135deg, #F8FAFC 0%, #14B8A6 25%, #8B5CF6 50%, #EC4899 75%, #F59E0B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer-flow 4s ease-in-out infinite;
+  animation: shimmer-pearl 4s ease-in-out infinite;
   background-size: 300% 300%;
 }
 
-/* Ethereal Glow Effects */
-.ethereal-glow {
-  box-shadow: 
-    0 0 20px rgba(6, 182, 212, 0.3),
-    0 0 40px rgba(139, 92, 246, 0.2),
-    0 0 60px rgba(236, 72, 153, 0.1);
-  animation: pearl-glow 3s ease-in-out infinite alternate;
-}
-
-.ethereal-glow:hover {
-  box-shadow: 
-    0 0 30px rgba(6, 182, 212, 0.5),
-    0 0 60px rgba(139, 92, 246, 0.3),
-    0 0 90px rgba(236, 72, 153, 0.2);
-}
-
-/* Siren Logo Animation */
-.siren-logo {
-  animation: siren-dance 8s ease-in-out infinite;
-  filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.4));
-}
-
-.siren-logo:hover {
-  animation-duration: 4s;
-  filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.6)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.3));
-}
-
 /* Sound Wave Visualization */
-.siren-sound-wave {
+.sound-wave {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,10 +172,10 @@ body::before {
 
 .sound-bar {
   width: 4px;
-  background: linear-gradient(to top, #06B6D4, #7C3AED, #EC4899);
+  background: linear-gradient(to top, #14B8A6, #8B5CF6, #EC4899);
   border-radius: 2px;
-  animation: float-gentle 2s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  animation: float-mystical 2s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
 }
 
 .sound-bar:nth-child(1) { animation-delay: 0s; height: 20px; }
@@ -215,49 +189,64 @@ body::before {
 .sound-bar:nth-child(9) { animation-delay: 0.2s; height: 45px; }
 .sound-bar:nth-child(10) { animation-delay: 0.1s; height: 20px; }
 
+/* Mystical Particles */
+.mystical-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.8) 0%, rgba(139, 92, 246, 0.4) 100%);
+  border-radius: 50%;
+  animation: float-mystical 10s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.5);
+}
+
+.mystical-particle:nth-child(even) {
+  background: radial-gradient(circle, rgba(248, 250, 252, 0.6) 0%, rgba(20, 184, 166, 0.3) 100%);
+  animation-duration: 12s;
+  box-shadow: 0 0 12px rgba(248, 250, 252, 0.4);
+}
+
+/* Sound Ripples */
+.sound-ripple {
+  position: absolute;
+  border: 2px solid rgba(20, 184, 166, 0.3);
+  border-radius: 50%;
+  animation: ripple-sound 4s ease-out infinite;
+}
+
+.sound-ripple:nth-child(2) {
+  border-color: rgba(139, 92, 246, 0.3);
+  animation-delay: 1.5s;
+}
+
+.sound-ripple:nth-child(3) {
+  border-color: rgba(236, 72, 153, 0.3);
+  animation-delay: 3s;
+}
+
+/* Siren Glow Effect */
+.siren-glow {
+  box-shadow: 
+    0 0 20px rgba(20, 184, 166, 0.3),
+    0 0 40px rgba(139, 92, 246, 0.2),
+    0 0 60px rgba(236, 72, 153, 0.1);
+  animation: siren-glow 3s ease-in-out infinite alternate;
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1A1B2E;
+  background: #1A1A1F;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #06B6D4, #7C3AED);
+  background: linear-gradient(135deg, #14B8A6, #8B5CF6);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #7C3AED, #EC4899);
-}
-
-/* Typography */
-.flowing-text {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  letter-spacing: 0.025em;
-  line-height: 1.6;
-}
-
-/* Moonlight Reflection Effect */
-.moonlight-reflection {
-  position: relative;
-  overflow: hidden;
-}
-
-.moonlight-reflection::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent 30%, rgba(248, 250, 252, 0.1) 50%, transparent 70%);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.moonlight-reflection:hover::after {
-  transform: translateX(100%);
+  background: linear-gradient(135deg, #8B5CF6, #EC4899);
 }

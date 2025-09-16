@@ -46,22 +46,7 @@ const SoundDemos = () => {
   };
 
   return (
-    <section id="sound-demos" className="py-20 bg-cosmic-ocean relative overflow-hidden">
-      {/* Ocean Currents */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="ocean-current"
-            style={{
-              top: `${20 + i * 15}%`,
-              animationDelay: `${i * 4}s`,
-              opacity: 0.2
-            }}
-          />
-        ))}
-      </div>
-
+    <section id="sound-demos" className="py-20 bg-cosmic-bg relative overflow-hidden">
       {/* Mystical Particles */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(18)].map((_, i) => (
@@ -82,20 +67,24 @@ const SoundDemos = () => {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <div className="relative">
-              <img 
-                src="/public/WhatsApp Image 2025-09-15 at 7.36.43 PM.jpeg" 
-                alt="Sirens Logo" 
-                className="w-12 h-12 object-contain siren-logo ethereal-glow"
-              />
+              <div className="vinyl-disc siren-glow">
+                <div className="siren-logo-container">
+                  <img 
+                    src="/public/WhatsApp Image 2025-09-15 at 7,36,43 PM-photoaidcom-cropped.jpeg" 
+                    alt="Sirens Logo" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
               <div className="absolute inset-0 animate-ping">
-                <Music className="w-12 h-12 text-mystic-turquoise opacity-30" />
+                <Music className="w-12 h-12 text-siren-teal opacity-30" />
               </div>
             </div>
           </div>
-          <h2 className="text-4xl font-bold text-moonlit-pearl mb-6 flowing-text">
-            Hear the <span className="siren-gradient">Magic</span>
+          <h2 className="text-4xl font-bold text-pearl-white mb-6">
+            Hear the <span className="siren-text-gradient">Magic</span>
           </h2>
-          <p className="text-xl text-silver-shimmer max-w-3xl mx-auto leading-relaxed flowing-text">
+          <p className="text-xl text-silver-pearl max-w-3xl mx-auto leading-relaxed">
             Experience our signature brand sounds that captivate audiences and create lasting emotional connections. 
             Each sound is crafted to embody your brand's unique personality.
           </p>
@@ -104,44 +93,44 @@ const SoundDemos = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {soundDemos.map((demo, index) => {
             const gradients = [
-              'from-mystic-turquoise to-violet-depths',
-              'from-violet-depths to-starlight-pink',
-              'from-starlight-pink to-moonbeam-gold',
-              'from-moonbeam-gold to-ocean-jade'
+              'from-siren-teal to-cosmic-purple',
+              'from-cosmic-purple to-divine-pink',
+              'from-divine-pink to-celestial-gold',
+              'from-celestial-gold to-aurora-green'
             ];
             
             return (
               <div
                 key={demo.id}
-                className="mystical-card rounded-2xl p-6 transition-all duration-300 group hover:scale-105 ethereal-glow moonlight-reflection"
+                className="siren-card rounded-2xl p-6 transition-all duration-300 group hover:scale-105 siren-glow"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`text-sm font-medium text-moonlit-pearl bg-gradient-to-r ${gradients[index]} px-3 py-1 rounded-full flowing-text`}>
+                  <span className={`text-sm font-medium text-pearl-white bg-gradient-to-r ${gradients[index]} px-3 py-1 rounded-full`}>
                     {demo.category}
                   </span>
-                  <span className="text-sm text-silver-shimmer font-mono">
+                  <span className="text-sm text-silver-pearl font-mono">
                     {demo.duration}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-semibold text-moonlit-pearl mb-2 flowing-text">
+                <h3 className="text-lg font-semibold text-pearl-white mb-2">
                   {demo.title}
                 </h3>
-                <p className="text-silver-shimmer text-sm mb-6 leading-relaxed flowing-text">
+                <p className="text-silver-pearl text-sm mb-6 leading-relaxed">
                   {demo.description}
                 </p>
 
                 <div className="flex items-center justify-between">
                   <button
                     onClick={() => handlePlayPause(demo.id)}
-                    className={`flex items-center space-x-2 bg-gradient-to-r ${gradients[index]} text-moonlit-pearl px-4 py-2 rounded-lg transition-all duration-300 group-hover:shadow-lg hover:scale-105 moonlight-reflection`}
+                    className={`flex items-center space-x-2 bg-gradient-to-r ${gradients[index]} text-pearl-white px-4 py-2 rounded-lg transition-all duration-300 group-hover:shadow-lg hover:scale-105`}
                   >
                     {playingDemo === demo.id ? (
                       <Pause className="w-4 h-4" />
                     ) : (
                       <Play className="w-4 h-4" />
                     )}
-                    <span className="text-sm font-medium flowing-text">
+                    <span className="text-sm font-medium">
                       {playingDemo === demo.id ? 'Playing' : 'Play'}
                     </span>
                   </button>
@@ -164,10 +153,10 @@ const SoundDemos = () => {
                 </div>
 
                 {playingDemo === demo.id && (
-                  <div className="mt-4 mystical-card rounded-lg p-3">
-                    <div className="flex items-center space-x-2 text-mystic-turquoise">
+                  <div className="mt-4 siren-card rounded-lg p-3">
+                    <div className="flex items-center space-x-2 text-siren-teal">
                       <Volume2 className="w-4 h-4 animate-pulse" />
-                      <div className="flex-1 bg-midnight-ocean rounded-full h-2 overflow-hidden">
+                      <div className="flex-1 bg-siren-black rounded-full h-2 overflow-hidden">
                         <div className={`bg-gradient-to-r ${gradients[index]} h-full rounded-full animate-pulse`} style={{ width: '60%' }} />
                       </div>
                       <Sparkles className="w-4 h-4 animate-pulse" />
@@ -181,18 +170,20 @@ const SoundDemos = () => {
 
         <div className="text-center mt-12">
           <div className="flex justify-center mb-4">
-            <img 
-              src="/public/WhatsApp Image 2025-09-15 at 7.36.43 PM.jpeg" 
-              alt="Sirens Logo" 
-              className="w-10 h-10 object-contain siren-logo"
-            />
+            <div className="w-10 h-10 bg-vinyl-gradient rounded-full border-2 border-siren-teal flex items-center justify-center animate-vinyl-spin">
+              <img 
+                src="/public/WhatsApp Image 2025-09-15 at 7,36,43 PM-photoaidcom-cropped.jpeg" 
+                alt="Sirens Logo" 
+                className="w-6 h-6 object-cover rounded-full"
+              />
+            </div>
           </div>
-          <p className="text-silver-shimmer mb-6 flex items-center justify-center flowing-text">
-            <Waves className="w-5 h-5 mr-2 text-mystic-turquoise" />
+          <p className="text-silver-pearl mb-6 flex items-center justify-center">
+            <Waves className="w-5 h-5 mr-2 text-siren-teal" />
             Ready to create your signature sound?
-            <Waves className="w-5 h-5 ml-2 text-mystic-turquoise" />
+            <Waves className="w-5 h-5 ml-2 text-siren-teal" />
           </p>
-          <button className="moonlit-button text-moonlit-pearl px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 moonlight-reflection flowing-text">
+          <button className="siren-button text-pearl-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
             Start Your Sound Journey
           </button>
         </div>
