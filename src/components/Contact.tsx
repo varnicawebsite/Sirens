@@ -164,6 +164,31 @@ const Contact = () => {
             </form>
           </div>
         </div>
+
+        <div className="text-center mt-16">
+          <div className="siren-card rounded-xl p-8 text-pearl-white">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Ready to <span className="siren-text-gradient">Sound Different</span>?
+            </h3>
+            <p className="text-silver-pearl mb-6">
+              Let's create something extraordinary together. Your brand deserves to be heard.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#contact"
+                className="siren-button px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              >
+                Start Your Project
+              </a>
+              <a
+                href="#portfolio"
+                className="border border-siren-teal text-siren-teal px-8 py-3 rounded-lg font-semibold hover:bg-siren-teal hover:text-pearl-white transition-all duration-300"
+              >
+                View Our Work
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
