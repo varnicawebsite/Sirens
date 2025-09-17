@@ -34,11 +34,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-vinyl-gradient rounded-full border-2 border-siren-teal flex items-center justify-center animate-vinyl-spin siren-glow">
+              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-siren-teal">
                 <img 
-                  src="/public/SirensLogo.jpeg" 
+                  src="/SirensLogo.jpeg" 
                   alt="Sirens Logo" 
-                  className="w-5 h-5 object-cover rounded-full"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <span className="text-2xl font-bold siren-text-gradient">Sirens</span>

@@ -30,14 +30,12 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="relative">
-              <div className="w-10 h-10 bg-vinyl-gradient rounded-full border-2 border-siren-teal flex items-center justify-center animate-vinyl-spin">
-                <img 
-                  src="/public/SirensLogo.jpeg" 
-                  alt="Sirens Logo" 
-                  className="w-6 h-6 object-cover rounded-full"
-                />
-              </div>
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-siren-teal">
+              <img 
+                src="/SirensLogo.jpeg" 
+                alt="Sirens Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="text-2xl font-bold siren-text-gradient">Sirens</span>
           </div>

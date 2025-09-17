@@ -49,15 +49,6 @@ const WhySound = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block p-4 siren-card rounded-full mb-6 siren-glow">
-            <div className="w-12 h-12 bg-vinyl-gradient rounded-full border-2 border-siren-teal flex items-center justify-center animate-vinyl-spin">
-              <img 
-                src="/public/SirensLogo.jpeg" 
-                alt="Sirens Logo" 
-                className="w-6 h-6 object-cover rounded-full"
-              />
-            </div>
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-pearl-white mb-6">
             Why Your Brand Needs a <span className="siren-text-gradient">Sound</span>
           </h2>
@@ -107,17 +98,6 @@ const WhySound = () => {
         {/* Main Message */}
         <div className="text-center max-w-5xl mx-auto">
           <div className="siren-card rounded-2xl p-8 md:p-12 siren-glow">
-            <div className="flex justify-center mb-6">
-              <div className="vinyl-disc siren-glow">
-                <div className="siren-logo-container">
-                  <img 
-                    src="/public/SirensLogo.jpeg" 
-                    alt="Sirens Logo" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
             <h3 className="text-2xl md:text-3xl font-bold text-pearl-white mb-6">
               We Recognize and Remember Through <span className="siren-text-gradient">Sound</span>
             </h3>

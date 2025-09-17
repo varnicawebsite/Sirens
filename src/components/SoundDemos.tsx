@@ -65,22 +65,6 @@ const SoundDemos = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-6">
-            <div className="relative">
-              <div className="vinyl-disc siren-glow">
-                <div className="siren-logo-container">
-                  <img 
-                    src="/public/SirensLogo.jpeg" 
-                    alt="Sirens Logo" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              <div className="absolute inset-0 animate-ping">
-                <Music className="w-12 h-12 text-siren-teal opacity-30" />
-              </div>
-            </div>
-          </div>
           <h2 className="text-4xl font-bold text-pearl-white mb-6">
             Hear the <span className="siren-text-gradient">Magic</span>
           </h2>
@@ -169,15 +153,6 @@ const SoundDemos = () => {
         </div>
 
         <div className="text-center mt-12">
-          <div className="flex justify-center mb-4">
-            <div className="w-10 h-10 bg-vinyl-gradient rounded-full border-2 border-siren-teal flex items-center justify-center animate-vinyl-spin">
-              <img 
-                src="/public/SirensLogo.jpeg" 
-                alt="Sirens Logo" 
-                className="w-6 h-6 object-cover rounded-full"
-              />
-            </div>
-          </div>
           <p className="text-silver-pearl mb-6 flex items-center justify-center">
             <Waves className="w-5 h-5 mr-2 text-siren-teal" />
             Ready to create your signature sound?
