@@ -7,17 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Simplified Siren Brand Colors
+        // Dark theme colors
         'siren-black': '#0A0A0F',
         'vinyl-black': '#1A1A1F',
         'cosmic-void': '#0F0F14',
         
-        // Clean whites and grays
+        // Light colors for text
         'pearl-white': '#F8FAFC',
         'silver-mist': '#E2E8F0',
         'soft-gray': '#94A3B8',
         
-        // Signature brand color
+        // Brand colors
         'siren-teal': '#14B8A6',
         'deep-teal': '#0F766E',
         
@@ -47,7 +47,7 @@ export default {
       backgroundImage: {
         'siren-gradient': 'linear-gradient(135deg, #14B8A6 0%, #8B5CF6 100%)',
         'vinyl-gradient': 'radial-gradient(circle, #1A1A1F 0%, #0A0A0F 100%)',
-        'subtle-gradient': 'linear-gradient(135deg, #0A0A0F 0%, #1A1A1F 100%)',
+        'dark-gradient': 'linear-gradient(135deg, #0A0A0F 0%, #1A1A1F 100%)',
       }
     },
   },

@@ -8,54 +8,54 @@ const Services = () => {
       title: "Brand Theme Song / Audio Identity",
       description: "Your signature sound that makes your brand instantly recognizable - like Netflix's ta-dum or Apple's ringtone.",
       featured: true,
-      color: "from-siren-teal to-cosmic-purple"
+      color: "from-siren-teal to-accent-purple"
     },
     {
       icon: Users,
       title: "Social Authority Content Creation",
       description: "Strategic content creation and planning that establishes your brand as the authority in your space.",
       featured: false,
-      color: "from-cosmic-purple to-divine-pink"
+      color: "from-accent-purple to-accent-gold"
     },
     {
       icon: Camera,
       title: "Cinematic Influence ADS",
       description: "From concept to camera to CGI - cinematic shoots that captivate and convert your audience.",
       featured: false,
-      color: "from-divine-pink to-celestial-gold"
+      color: "from-accent-gold to-siren-teal"
     },
     {
       icon: Crown,
       title: "Faces of Influence",
       description: "Professional model providing services to give your brand the perfect face and personality.",
       featured: false,
-      color: "from-celestial-gold to-aurora-green"
+      color: "from-siren-teal to-deep-teal"
     },
     {
       icon: Compass,
       title: "The Visibility Engine",
       description: "Advanced SEO & Google My Business optimization that puts your brand where it needs to be found.",
       featured: false,
-      color: "from-aurora-green to-siren-teal"
+      color: "from-deep-teal to-accent-purple"
     },
     {
       icon: Palette,
       title: "Digital Real Estate Redefined",
       description: "Website design & revamping that transforms your digital presence into a conversion powerhouse.",
       featured: false,
-      color: "from-siren-teal to-cosmic-purple"
+      color: "from-accent-purple to-accent-gold"
     },
     {
       icon: BarChart3,
       title: "The Brand Book",
       description: "Complete brand identity system that ensures consistency across every touchpoint and interaction.",
       featured: false,
-      color: "from-cosmic-purple to-divine-pink"
+      color: "from-accent-gold to-siren-teal"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-cosmic-bg relative overflow-hidden">
+    <section id="services" className="py-20 bg-dark-gradient relative overflow-hidden">
       {/* Mystical Particles */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(15)].map((_, i) => (

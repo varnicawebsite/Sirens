@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Clean Modern Siren Theme */
+/* Dark Theme Base */
 body {
   background: linear-gradient(135deg, #0A0A0F 0%, #1A1A1F 100%);
   color: #F8FAFC;
@@ -61,9 +61,9 @@ body {
   z-index: 2;
 }
 
-/* Clean Cards */
+/* Dark Cards */
 .siren-card {
-  background: rgba(248, 250, 252, 0.05);
+  background: rgba(26, 26, 31, 0.8);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(20, 184, 166, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -71,13 +71,13 @@ body {
 }
 
 .siren-card:hover {
-  background: rgba(248, 250, 252, 0.08);
+  background: rgba(26, 26, 31, 0.9);
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   border-color: rgba(20, 184, 166, 0.4);
 }
 
-/* Clean Buttons */
+/* Buttons */
 .siren-button {
   background: linear-gradient(135deg, #14B8A6 0%, #8B5CF6 100%);
   position: relative;
@@ -91,7 +91,7 @@ body {
   box-shadow: 0 8px 25px rgba(20, 184, 166, 0.4);
 }
 
-/* Simple Gradient Text */
+/* Gradient Text */
 .siren-text-gradient {
   background: linear-gradient(135deg, #F8FAFC 0%, #14B8A6 50%, #8B5CF6 100%);
   -webkit-background-clip: text;
@@ -129,7 +129,7 @@ body {
   animation: gentle-glow 3s ease-in-out infinite alternate;
 }
 
-/* Clean Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

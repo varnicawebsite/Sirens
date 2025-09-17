@@ -3,7 +3,7 @@ import { Play, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen bg-subtle-gradient overflow-hidden">
+    <section id="hero" className="relative min-h-screen bg-dark-gradient overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
         <div className="text-center">
           {/* Revolving Vinyl Disc Logo */}
