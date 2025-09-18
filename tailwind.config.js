@@ -7,47 +7,55 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark theme colors
-        'siren-black': '#0A0A0F',
-        'vinyl-black': '#1A1A1F',
-        'cosmic-void': '#0F0F14',
+        // Deep oceanic base colors
+        'deep-ocean': '#0B1426',
+        'midnight-blue': '#1A2332',
+        'ocean-depth': '#243447',
         
-        // Light colors for text
-        'pearl-white': '#F8FAFC',
-        'silver-mist': '#E2E8F0',
-        'soft-gray': '#94A3B8',
+        // Siren brand colors from logo
+        'siren-silver': '#C8D5E8',
+        'pearl-glow': '#E8F1FF',
+        'mystic-teal': '#4FD1C7',
+        'deep-teal': '#2DD4BF',
         
-        // Brand colors
-        'siren-teal': '#14B8A6',
-        'deep-teal': '#0F766E',
+        // Accent colors
+        'cosmic-purple': '#8B5CF6',
+        'golden-accent': '#F59E0B',
+        'soft-pink': '#F472B6',
         
-        // Minimal accents
-        'accent-purple': '#8B5CF6',
-        'accent-gold': '#F59E0B',
+        // Text colors
+        'text-primary': '#F8FAFC',
+        'text-secondary': '#CBD5E1',
+        'text-muted': '#94A3B8',
       },
       animation: {
         'vinyl-spin': 'vinyl-spin 8s linear infinite',
-        'gentle-glow': 'gentle-glow 3s ease-in-out infinite alternate',
-        'sound-pulse': 'sound-pulse 2s ease-in-out infinite',
+        'gentle-pulse': 'gentle-pulse 3s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'sound-wave': 'sound-wave 2s ease-in-out infinite',
       },
       keyframes: {
         'vinyl-spin': {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
-        'gentle-glow': {
-          '0%': { boxShadow: '0 0 20px rgba(20, 184, 166, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(20, 184, 166, 0.6)' },
+        'gentle-pulse': {
+          '0%, 100%': { opacity: '0.8', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.05)' },
         },
-        'sound-pulse': {
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'sound-wave': {
           '0%, 100%': { transform: 'scaleY(1)' },
           '50%': { transform: 'scaleY(1.5)' },
         }
       },
       backgroundImage: {
-        'siren-gradient': 'linear-gradient(135deg, #14B8A6 0%, #8B5CF6 100%)',
-        'vinyl-gradient': 'radial-gradient(circle, #1A1A1F 0%, #0A0A0F 100%)',
-        'dark-gradient': 'linear-gradient(135deg, #0A0A0F 0%, #1A1A1F 100%)',
+        'ocean-gradient': 'linear-gradient(135deg, #0B1426 0%, #1A2332 50%, #243447 100%)',
+        'siren-gradient': 'linear-gradient(135deg, #4FD1C7 0%, #8B5CF6 100%)',
+        'card-gradient': 'linear-gradient(135deg, rgba(26, 35, 50, 0.8) 0%, rgba(36, 52, 71, 0.6) 100%)',
       }
     },
   },
