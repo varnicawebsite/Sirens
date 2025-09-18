@@ -4,16 +4,32 @@ import { Play, Sparkles } from 'lucide-react';
 const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen bg-ocean-gradient overflow-hidden">
-      {/* Floating Particles */}
+      {/* Underwater Light Rays */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="floating-particle"
+            className="light-ray"
+            style={{
+              left: `${10 + i * 12}%`,
+              top: `${Math.random() * 50}%`,
+              animationDelay: `${i * 0.5}s`,
+              transform: `rotate(${-10 + Math.random() * 20}deg)`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Floating Underwater Particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="underwater-particle"
             style={{
               left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
+              animationDelay: `${Math.random() * 12}s`,
+              animationDuration: `${10 + Math.random() * 8}s`
             }}
           />
         ))}
@@ -21,10 +37,10 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
         <div className="text-center">
-          {/* Revolving Vinyl Disc Logo */}
-          <div className="relative inline-block mb-8">
-            <div className="vinyl-disc siren-glow">
-              <div className="logo-container">
+          {/* Revolving Ocean Vinyl Disc Logo */}
+          <div className="relative inline-block mb-12">
+            <div className="ocean-vinyl-disc pearl-glow">
+              <div className="ocean-logo-container">
                 <img 
                   src="/SirensLogo.jpeg" 
                   alt="Sirens Logo" 
@@ -34,42 +50,46 @@ const Hero = () => {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-text-primary mb-6 leading-tight">
+          <h1 className="font-serif-elegant text-5xl md:text-7xl font-bold text-moonlight-pearl mb-8 leading-tight">
             Every Brand Has a Look.
             <br />
-            Only the <span className="siren-text-gradient">Great Ones</span> Have a <span className="siren-text-gradient">Sound</span>.
+            Only the <span className="ocean-text-gradient">Great Ones</span> Have a <span className="ocean-text-gradient">Sound</span>.
           </h1>
           
-          <p className="text-xl md:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-sans-airy text-xl md:text-2xl text-pearl-shimmer mb-10 max-w-4xl mx-auto leading-relaxed">
             We create signature sounds and comprehensive digital experiences that make your brand 
-            <span className="font-semibold text-mystic-teal"> unforgettable</span> - heard even before it's seen.
+            <span className="font-medium text-soft-aqua"> unforgettable</span> - heard even before it's seen.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button className="group siren-button text-text-primary px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-              <span className="flex items-center gap-2 relative z-10">
-                <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <button className="group ocean-button text-moonlight-pearl px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 ripple-container">
+              <span className="flex items-center gap-3 relative z-10">
+                <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 Hear Our Sound Demos
               </span>
             </button>
-            <button className="group border-2 border-mystic-teal text-mystic-teal hover:bg-mystic-teal hover:text-deep-ocean px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+            <button className="group border-2 border-soft-aqua text-soft-aqua hover:bg-soft-aqua hover:text-ocean-depths px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
               Get Your Free Consultation
             </button>
           </div>
 
-          {/* Sound Wave Visualization */}
-          <div className="sound-wave mb-8">
+          {/* Ocean Sound Wave Visualization */}
+          <div className="ocean-sound-wave mb-12">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="sound-bar"></div>
+              <div key={i} className="ocean-sound-bar"></div>
             ))}
           </div>
 
-          <p className="text-text-secondary text-sm flex items-center justify-center">
-            <Sparkles className="w-4 h-4 mr-2 text-golden-accent" />
+          <p className="font-sans-airy text-pearl-shimmer text-sm flex items-center justify-center opacity-80">
+            <Sparkles className="w-5 h-5 mr-3 text-golden-ray animate-shimmer" />
             Creating signature audio identities for brands worldwide
+            <Sparkles className="w-5 h-5 ml-3 text-golden-ray animate-shimmer" />
           </p>
         </div>
       </div>
+
+      {/* Underwater Ambient Light */}
+      <div className="absolute inset-0 bg-underwater-light pointer-events-none opacity-30"></div>
     </section>
   );
 };

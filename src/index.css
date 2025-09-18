@@ -1,158 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Base Styles */
 body {
-  background: linear-gradient(135deg, #0B1426 0%, #1A2332 50%, #243447 100%);
-  color: #F8FAFC;
+  background: linear-gradient(135deg, #0A1628 0%, #1B2B44 25%, #2A4A6B 50%, #4A90A4 100%);
+  color: #F5FAFE;
   overflow-x: hidden;
   min-height: 100vh;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Vinyl Disc Effect */
-.vinyl-disc {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, #1A2332 0%, #0B1426 100%);
+/* Underwater Floating Particles */
+.underwater-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(123, 196, 196, 0.8), rgba(123, 196, 196, 0.2));
   border-radius: 50%;
-  border: 3px solid #4FD1C7;
+  animation: underwater-drift 12s linear infinite;
+  opacity: 0.7;
+}
+
+.underwater-particle:nth-child(odd) {
+  background: radial-gradient(circle, rgba(244, 208, 63, 0.6), rgba(244, 208, 63, 0.1));
+  animation-duration: 15s;
+}
+
+.underwater-particle:nth-child(3n) {
+  width: 4px;
+  height: 4px;
+  animation-duration: 10s;
+}
+
+/* Vinyl Disc with Ocean Theme */
+.ocean-vinyl-disc {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, #0A1628 0%, #1B2B44 70%, #2A4A6B 100%);
+  border-radius: 50%;
+  border: 3px solid #7BC4C4;
   animation: vinyl-spin 8s linear infinite;
   box-shadow: 
-    0 0 30px rgba(79, 209, 199, 0.4),
-    inset 0 0 20px rgba(0, 0, 0, 0.5);
+    0 0 40px rgba(123, 196, 196, 0.4),
+    inset 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
-.vinyl-disc::before {
+.ocean-vinyl-disc::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background: #4FD1C7;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(45deg, #7BC4C4, #5FB3B3);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(79, 209, 199, 0.8);
+  box-shadow: 0 0 15px rgba(123, 196, 196, 0.8);
 }
 
-.vinyl-disc::after {
+.ocean-vinyl-disc::after {
   content: '';
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  border: 1px solid rgba(79, 209, 199, 0.3);
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 1px solid rgba(123, 196, 196, 0.3);
   border-radius: 50%;
 }
 
 /* Logo Container Inside Vinyl */
-.logo-container {
+.ocean-logo-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   overflow: hidden;
   z-index: 2;
+  border: 2px solid rgba(123, 196, 196, 0.3);
 }
 
-/* Siren Cards */
-.siren-card {
-  background: linear-gradient(135deg, rgba(26, 35, 50, 0.8) 0%, rgba(36, 52, 71, 0.6) 100%);
+/* Ocean Cards */
+.ocean-card {
+  background: linear-gradient(135deg, 
+    rgba(26, 43, 68, 0.7) 0%, 
+    rgba(42, 74, 107, 0.5) 50%, 
+    rgba(74, 144, 164, 0.3) 100%);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(79, 209, 199, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.siren-card:hover {
-  background: linear-gradient(135deg, rgba(26, 35, 50, 0.9) 0%, rgba(36, 52, 71, 0.8) 100%);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  border-color: rgba(79, 209, 199, 0.4);
-}
-
-/* Siren Buttons */
-.siren-button {
-  background: linear-gradient(135deg, #4FD1C7 0%, #8B5CF6 100%);
+  border: 1px solid rgba(123, 196, 196, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(79, 209, 199, 0.3);
-  transition: all 0.3s ease;
 }
 
-.siren-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(79, 209, 199, 0.4);
+.ocean-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(123, 196, 196, 0.1), 
+    transparent);
+  transition: left 0.6s ease;
+}
+
+.ocean-card:hover::before {
+  left: 100%;
+}
+
+.ocean-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(123, 196, 196, 0.2);
+  border-color: rgba(123, 196, 196, 0.4);
+}
+
+/* Ocean Buttons */
+.ocean-button {
+  background: linear-gradient(135deg, 
+    #7BC4C4 0%, 
+    #5FB3B3 50%, 
+    #4A90A4 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 20px rgba(123, 196, 196, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ocean-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent);
+  transition: left 0.5s ease;
+}
+
+.ocean-button:hover::before {
+  left: 100%;
+}
+
+.ocean-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 30px rgba(123, 196, 196, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 /* Gradient Text */
-.siren-text-gradient {
-  background: linear-gradient(135deg, #4FD1C7 0%, #8B5CF6 50%, #F59E0B 100%);
+.ocean-text-gradient {
+  background: linear-gradient(135deg, 
+    #7BC4C4 0%, 
+    #5FB3B3 25%, 
+    #F4D03F 50%, 
+    #7BC4C4 75%, 
+    #5FB3B3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
-/* Sound Wave Animation */
-.sound-wave {
+/* Underwater Light Rays */
+.light-ray {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, 
+    rgba(244, 208, 63, 0.6), 
+    rgba(244, 208, 63, 0.2), 
+    transparent);
+  animation: wave-flow 8s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+/* Ripple Effect */
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(123, 196, 196, 0.3);
+  transform: translate(-50%, -50%);
+  animation: ripple 2s ease-out infinite;
+}
+
+/* Sound Wave Visualization */
+.ocean-sound-wave {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
 }
 
-.sound-bar {
+.ocean-sound-bar {
   width: 4px;
-  background: linear-gradient(to top, #4FD1C7, #8B5CF6);
+  background: linear-gradient(to top, #7BC4C4, #F4D03F, #7BC4C4);
   border-radius: 2px;
-  animation: sound-wave 2s ease-in-out infinite;
+  animation: gentle-float 2s ease-in-out infinite;
 }
 
-.sound-bar:nth-child(1) { animation-delay: 0s; height: 20px; }
-.sound-bar:nth-child(2) { animation-delay: 0.1s; height: 35px; }
-.sound-bar:nth-child(3) { animation-delay: 0.2s; height: 45px; }
-.sound-bar:nth-child(4) { animation-delay: 0.3s; height: 30px; }
-.sound-bar:nth-child(5) { animation-delay: 0.4s; height: 50px; }
-.sound-bar:nth-child(6) { animation-delay: 0.5s; height: 40px; }
-.sound-bar:nth-child(7) { animation-delay: 0.4s; height: 25px; }
-.sound-bar:nth-child(8) { animation-delay: 0.3s; height: 35px; }
+.ocean-sound-bar:nth-child(1) { animation-delay: 0s; height: 25px; }
+.ocean-sound-bar:nth-child(2) { animation-delay: 0.1s; height: 40px; }
+.ocean-sound-bar:nth-child(3) { animation-delay: 0.2s; height: 55px; }
+.ocean-sound-bar:nth-child(4) { animation-delay: 0.3s; height: 35px; }
+.ocean-sound-bar:nth-child(5) { animation-delay: 0.4s; height: 60px; }
+.ocean-sound-bar:nth-child(6) { animation-delay: 0.5s; height: 45px; }
+.ocean-sound-bar:nth-child(7) { animation-delay: 0.4s; height: 30px; }
+.ocean-sound-bar:nth-child(8) { animation-delay: 0.3s; height: 40px; }
 
-/* Floating Particles */
-.floating-particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: radial-gradient(circle, #4FD1C7, transparent);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-  opacity: 0.6;
-}
-
-/* Gentle Glow */
-.siren-glow {
-  box-shadow: 0 0 20px rgba(79, 209, 199, 0.3);
+/* Pearl Glow Effect */
+.pearl-glow {
+  animation: pearl-glow 4s ease-in-out infinite;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1A2332;
+  background: rgba(26, 43, 68, 0.5);
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #4FD1C7, #8B5CF6);
-  border-radius: 4px;
+  background: linear-gradient(135deg, #7BC4C4, #5FB3B3);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #8B5CF6, #4FD1C7);
+  background: linear-gradient(135deg, #5FB3B3, #4A90A4);
 }

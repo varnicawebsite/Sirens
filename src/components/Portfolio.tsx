@@ -51,14 +51,45 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-seashell-blush">
+    <section id="portfolio" className="py-24 bg-gradient-to-b from-deep-current to-mystic-waters relative overflow-hidden">
+      {/* Underwater Light Rays */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={i}
+            className="light-ray"
+            style={{
+              left: `${12 + i * 12}%`,
+              top: `${Math.random() * 60}%`,
+              animationDelay: `${i * 0.7}s`,
+              transform: `rotate(${-10 + Math.random() * 20}deg)`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Floating Underwater Particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(10)].map((_, i) => (
+          <div
+            key={i}
+            className="underwater-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 12}s`,
+              animationDuration: `${14 + Math.random() * 6}s`
+            }}
+          />
+        ))}
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-stormy-waters mb-6">
+          <h2 className="font-serif-elegant text-4xl md:text-6xl font-bold text-moonlight-pearl mb-8">
             Success Stories That Resonate
           </h2>
-          <p className="text-xl text-deep-teal max-w-3xl mx-auto leading-relaxed">
+          <p className="font-sans-airy text-xl text-pearl-shimmer max-w-4xl mx-auto leading-relaxed">
             See how we've transformed brands with strategic digital marketing and signature sound identities 
             that create lasting impressions and drive measurable results.
           </p>
@@ -70,7 +101,7 @@ const Portfolio = () => {
             <div
               key={study.id}
               className={`bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 ${
-                study.featured ? 'ring-2 ring-tidal-teal ring-opacity-20' : ''
+                study.featured ? 'ring-2 ring-soft-aqua ring-opacity-30' : ''
               }`}
             >
               <div className={`grid grid-cols-1 ${index % 2 === 0 ? 'lg:grid-cols-2' : 'lg:grid-cols-2'} gap-0`}>
@@ -83,7 +114,7 @@ const Portfolio = () => {
                       className="w-full h-full object-cover"
                     />
                     {study.featured && (
-                      <div className="absolute top-4 left-4 bg-deep-teal text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      <div className="absolute top-4 left-4 bg-soft-aqua text-moonlight-pearl px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                         Featured Case
                       </div>
                     )}
@@ -94,29 +125,29 @@ const Portfolio = () => {
                 <div className={`p-8 lg:p-12 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="mb-4">
                     <div className="flex items-center space-x-2 mb-2">
-                      <h3 className="text-2xl md:text-3xl font-bold text-stormy-waters">
+                      <h3 className="font-serif-elegant text-2xl md:text-3xl font-bold text-ocean-depths">
                         {study.client}
                       </h3>
-                      <ExternalLink className="w-5 h-5 text-deep-teal" />
+                      <ExternalLink className="w-5 h-5 text-soft-aqua" />
                     </div>
-                    <p className="text-deep-teal font-medium">{study.industry}</p>
+                    <p className="text-gentle-teal font-medium">{study.industry}</p>
                   </div>
 
                   <div className="space-y-4 mb-6">
                     <div>
-                      <h4 className="font-semibold text-stormy-waters mb-1">Challenge</h4>
-                      <p className="text-deep-teal">{study.challenge}</p>
+                      <h4 className="font-semibold text-ocean-depths mb-1">Challenge</h4>
+                      <p className="text-mystic-waters">{study.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-stormy-waters mb-1">Solution</h4>
-                      <p className="text-deep-teal">{study.solution}</p>
+                      <h4 className="font-semibold text-ocean-depths mb-1">Solution</h4>
+                      <p className="text-mystic-waters">{study.solution}</p>
                     </div>
-                    <div className="bg-seashell-blush p-4 rounded-lg">
-                      <h4 className="font-semibold text-stormy-waters mb-2 flex items-center">
-                        <Waves className="w-4 h-4 mr-2 text-deep-teal" />
+                    <div className="bg-gradient-to-r from-soft-aqua/10 to-gentle-teal/10 p-4 rounded-lg border border-soft-aqua/20">
+                      <h4 className="font-semibold text-ocean-depths mb-2 flex items-center">
+                        <Waves className="w-4 h-4 mr-2 text-soft-aqua" />
                         Sound Branding Element
                       </h4>
-                      <p className="text-deep-teal text-sm">{study.soundElement}</p>
+                      <p className="text-mystic-waters text-sm">{study.soundElement}</p>
                     </div>
                   </div>
 
@@ -140,10 +171,10 @@ const Portfolio = () => {
                       return (
                         <div key={key} className="text-center">
                           <div className="flex justify-center mb-2">
-                            <Icon className="w-5 h-5 text-deep-teal" />
+                            <Icon className="w-5 h-5 text-soft-aqua" />
                           </div>
-                          <div className="font-bold text-lg text-stormy-waters">{value}</div>
-                          <div className="text-xs text-deep-teal">{labels[key as keyof typeof labels]}</div>
+                          <div className="font-bold text-lg text-ocean-depths">{value}</div>
+                          <div className="text-xs text-gentle-teal">{labels[key as keyof typeof labels]}</div>
                         </div>
                       );
                     })}
@@ -156,11 +187,11 @@ const Portfolio = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-deep-teal to-stormy-waters rounded-xl p-8 text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+          <div className="ocean-card rounded-2xl p-12 text-moonlight-pearl">
+            <h3 className="font-serif-elegant text-3xl md:text-4xl font-bold mb-6">
               Ready to Be Our Next Success Story?
             </h3>
-            <p className="text-seashell-blush mb-6 max-w-2xl mx-auto">
+            <p className="font-sans-airy text-pearl-shimmer mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
               Join the brands that have transformed their market presence with our unique combination 
               of digital marketing expertise and signature sound design.
             </p>
@@ -169,13 +200,16 @@ const Portfolio = () => {
                 const element = document.getElementById('contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="bg-white text-deep-teal hover:bg-seashell-blush px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+              className="ocean-button text-moonlight-pearl px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 ripple-container"
             >
               Start Your Transformation
             </button>
           </div>
         </div>
       </div>
+
+      {/* Underwater Ambient Light */}
+      <div className="absolute inset-0 bg-underwater-light pointer-events-none opacity-15"></div>
     </section>
   );
 };

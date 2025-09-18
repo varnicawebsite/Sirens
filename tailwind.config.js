@@ -7,56 +7,78 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Deep oceanic base colors
-        'deep-ocean': '#0B1426',
-        'midnight-blue': '#1A2332',
-        'ocean-depth': '#243447',
-        
-        // Siren brand colors from logo
-        'siren-silver': '#C8D5E8',
-        'pearl-glow': '#E8F1FF',
-        'mystic-teal': '#4FD1C7',
-        'deep-teal': '#2DD4BF',
-        
-        // Accent colors
-        'cosmic-purple': '#8B5CF6',
-        'golden-accent': '#F59E0B',
-        'soft-pink': '#F472B6',
-        
-        // Text colors
-        'text-primary': '#F8FAFC',
-        'text-secondary': '#CBD5E1',
-        'text-muted': '#94A3B8',
+        // Enchanted Ocean Palette
+        'ocean-depths': '#0A1628',
+        'deep-current': '#1B2B44',
+        'mystic-waters': '#2A4A6B',
+        'aqua-dream': '#4A90A4',
+        'soft-aqua': '#7BC4C4',
+        'gentle-teal': '#5FB3B3',
+        'pearl-shimmer': '#E8F4F8',
+        'moonlight-pearl': '#F5FAFE',
+        'golden-ray': '#F4D03F',
+        'sunbeam-gold': '#F7DC6F',
+        'coral-whisper': '#F8C471',
+        'sea-foam': '#A3E4D7',
+        'crystal-blue': '#85C1E9',
+        'mermaid-silver': '#D5DBDB',
+        'starfish-glow': '#F39C12',
+      },
+      fontFamily: {
+        'serif-elegant': ['Playfair Display', 'serif'],
+        'sans-airy': ['Inter', 'sans-serif'],
       },
       animation: {
+        'gentle-float': 'gentle-float 6s ease-in-out infinite',
+        'shimmer': 'shimmer 3s ease-in-out infinite',
+        'wave-flow': 'wave-flow 8s ease-in-out infinite',
+        'pearl-glow': 'pearl-glow 4s ease-in-out infinite',
+        'underwater-drift': 'underwater-drift 12s linear infinite',
         'vinyl-spin': 'vinyl-spin 8s linear infinite',
-        'gentle-pulse': 'gentle-pulse 3s ease-in-out infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'sound-wave': 'sound-wave 2s ease-in-out infinite',
+        'ripple': 'ripple 2s ease-out infinite',
       },
       keyframes: {
+        'gentle-float': {
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '50%': { transform: 'translateY(-15px) rotate(2deg)' },
+        },
+        'shimmer': {
+          '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.05)' },
+        },
+        'wave-flow': {
+          '0%, 100%': { transform: 'translateX(0px) translateY(0px)' },
+          '25%': { transform: 'translateX(10px) translateY(-5px)' },
+          '50%': { transform: 'translateX(-5px) translateY(-10px)' },
+          '75%': { transform: 'translateX(-10px) translateY(-5px)' },
+        },
+        'pearl-glow': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(123, 196, 196, 0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(123, 196, 196, 0.6)' },
+        },
+        'underwater-drift': {
+          '0%': { transform: 'translateY(100vh) translateX(-10px) rotate(0deg)' },
+          '100%': { transform: 'translateY(-100px) translateX(10px) rotate(360deg)' },
+        },
         'vinyl-spin': {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
-        'gentle-pulse': {
-          '0%, 100%': { opacity: '0.8', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.05)' },
+        'ripple': {
+          '0%': { transform: 'scale(0)', opacity: '1' },
+          '100%': { transform: 'scale(4)', opacity: '0' },
         },
-        'float': {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        'sound-wave': {
-          '0%, 100%': { transform: 'scaleY(1)' },
-          '50%': { transform: 'scaleY(1.5)' },
-        }
       },
       backgroundImage: {
-        'ocean-gradient': 'linear-gradient(135deg, #0B1426 0%, #1A2332 50%, #243447 100%)',
-        'siren-gradient': 'linear-gradient(135deg, #4FD1C7 0%, #8B5CF6 100%)',
-        'card-gradient': 'linear-gradient(135deg, rgba(26, 35, 50, 0.8) 0%, rgba(36, 52, 71, 0.6) 100%)',
-      }
+        'ocean-gradient': 'linear-gradient(135deg, #0A1628 0%, #1B2B44 25%, #2A4A6B 50%, #4A90A4 100%)',
+        'underwater-light': 'radial-gradient(ellipse at top, rgba(123, 196, 196, 0.3) 0%, transparent 70%)',
+        'pearl-shimmer': 'linear-gradient(45deg, #E8F4F8 0%, #F5FAFE 50%, #E8F4F8 100%)',
+        'golden-rays': 'linear-gradient(45deg, transparent 30%, rgba(244, 208, 63, 0.1) 50%, transparent 70%)',
+        'wave-pattern': 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(123, 196, 196, 0.1) 2px, rgba(123, 196, 196, 0.1) 4px)',
+      },
+      backdropBlur: {
+        'ocean': '20px',
+      },
     },
   },
   plugins: [],
