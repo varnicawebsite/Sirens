@@ -39,7 +39,7 @@ const Hero = () => {
         <div className="text-center">
           {/* Revolving Ocean Vinyl Disc Logo */}
           <div className="relative inline-block mb-12">
-            <div className="ocean-vinyl-disc pearl-glow">
+            <div className="ocean-vinyl-disc pearl-glow animate-vinyl-spin">
               <div className="ocean-logo-container">
                 <img 
                   src="/SirensLogo.jpeg" 

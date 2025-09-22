@@ -12,16 +12,31 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-cosmic-bg text-silver-pearl relative overflow-hidden">
-      {/* Mystical Particles */}
+    <footer className="bg-ocean-depths text-pearl-shimmer relative overflow-hidden">
+      {/* Underwater Light Rays */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={i}
+            className="light-ray"
+            style={{
+              left: `${12 + i * 12}%`,
+              top: `${Math.random() * 60}%`,
+              animationDelay: `${i * 0.8}s`,
+              transform: `rotate(${-15 + Math.random() * 30}deg)`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Floating Underwater Particles */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(10)].map((_, i) => (
           <div
             key={i}
-            className="mystical-particle"
+            className="underwater-particle"
             style={{
               left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 12}s`,
               animationDuration: `${10 + Math.random() * 8}s`
             }}
@@ -34,45 +49,45 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-siren-teal">
+              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-soft-aqua">
                 <img 
                   src="/SirensLogo.jpeg" 
                   alt="Sirens Logo" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className="text-2xl font-bold siren-text-gradient">Sirens</span>
+              <span className="font-serif-elegant text-2xl font-bold ocean-text-gradient">Sirens</span>
             </div>
-            <p className="text-silver-pearl leading-relaxed">
+            <p className="font-sans-airy text-pearl-shimmer leading-relaxed">
               The only digital marketing agency that creates both your online presence and your brand's signature sound.
             </p>
             <div className="flex space-x-4">
-              <button className="w-10 h-10 bg-gradient-to-br from-siren-teal to-cosmic-purple hover:from-cosmic-purple hover:to-divine-pink rounded-lg flex items-center justify-center transition-all duration-300 siren-glow hover:scale-110">
-                <Twitter className="w-4 h-4 text-pearl-white" />
+              <button className="w-10 h-10 bg-gradient-to-br from-soft-aqua to-gentle-teal hover:from-gentle-teal hover:to-golden-ray rounded-lg flex items-center justify-center transition-all duration-300 pearl-glow hover:scale-110">
+                <Twitter className="w-4 h-4 text-moonlight-pearl" />
               </button>
-              <button className="w-10 h-10 bg-gradient-to-br from-cosmic-purple to-divine-pink hover:from-divine-pink hover:to-celestial-gold rounded-lg flex items-center justify-center transition-all duration-300 siren-glow hover:scale-110">
-                <Linkedin className="w-4 h-4 text-pearl-white" />
+              <button className="w-10 h-10 bg-gradient-to-br from-gentle-teal to-golden-ray hover:from-golden-ray hover:to-coral-whisper rounded-lg flex items-center justify-center transition-all duration-300 pearl-glow hover:scale-110">
+                <Linkedin className="w-4 h-4 text-moonlight-pearl" />
               </button>
-              <button className="w-10 h-10 bg-gradient-to-br from-divine-pink to-celestial-gold hover:from-celestial-gold hover:to-aurora-green rounded-lg flex items-center justify-center transition-all duration-300 siren-glow hover:scale-110">
-                <Instagram className="w-4 h-4 text-pearl-white" />
+              <button className="w-10 h-10 bg-gradient-to-br from-golden-ray to-coral-whisper hover:from-coral-whisper hover:to-crystal-blue rounded-lg flex items-center justify-center transition-all duration-300 pearl-glow hover:scale-110">
+                <Instagram className="w-4 h-4 text-moonlight-pearl" />
               </button>
-              <button className="w-10 h-10 bg-gradient-to-br from-celestial-gold to-aurora-green hover:from-aurora-green hover:to-siren-teal rounded-lg flex items-center justify-center transition-all duration-300 siren-glow hover:scale-110">
-                <Youtube className="w-4 h-4 text-pearl-white" />
+              <button className="w-10 h-10 bg-gradient-to-br from-coral-whisper to-crystal-blue hover:from-crystal-blue hover:to-soft-aqua rounded-lg flex items-center justify-center transition-all duration-300 pearl-glow hover:scale-110">
+                <Youtube className="w-4 h-4 text-moonlight-pearl" />
               </button>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-pearl-white flex items-center">
-              <Sparkles className="w-4 h-4 mr-2 text-siren-teal" />
+            <h3 className="font-serif-elegant text-lg font-semibold mb-4 text-moonlight-pearl flex items-center">
+              <Sparkles className="w-4 h-4 mr-2 text-soft-aqua" />
               Services
             </h3>
             <ul className="space-y-2">
               <li>
                 <button 
                   onClick={() => scrollToSection('services')}
-                  className="text-silver-pearl hover:text-siren-teal transition-colors hover:translate-x-1 duration-300"
+                  className="font-sans-airy text-pearl-shimmer hover:text-soft-aqua transition-colors hover:translate-x-1 duration-300"
                 >
                   Sound Branding
                 </button>
@@ -80,7 +95,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('services')}
-                  className="text-silver-pearl hover:text-siren-teal transition-colors hover:translate-x-1 duration-300"
+                  className="font-sans-airy text-pearl-shimmer hover:text-soft-aqua transition-colors hover:translate-x-1 duration-300"
                 >
                   SEO Optimization
                 </button>
@@ -88,7 +103,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('services')}
-                  className="text-silver-pearl hover:text-siren-teal transition-colors hover:translate-x-1 duration-300"
+                  className="font-sans-airy text-pearl-shimmer hover:text-soft-aqua transition-colors hover:translate-x-1 duration-300"
                 >
                   Social Media Marketing
                 </button>
@@ -96,7 +111,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('services')}
-                  className="text-silver-pearl hover:text-siren-teal transition-colors hover:translate-x-1 duration-300"
+                  className="font-sans-airy text-pearl-shimmer hover:text-soft-aqua transition-colors hover:translate-x-1 duration-300"
                 >
                   Cinematic ADS
                 </button>
@@ -104,7 +119,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('services')}
-                  className="text-silver-pearl hover:text-siren-teal transition-colors hover:translate-x-1 duration-300"
+                  className="font-sans-airy text-pearl-shimmer hover:text-soft-aqua transition-colors hover:translate-x-1 duration-300"
                 >
                   Brand Identity
                 </button>
@@ -114,15 +129,15 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-pearl-white flex items-center">
-              <Waves className="w-4 h-4 mr-2 text-cosmic-purple" />
+            <h3 className="font-serif-elegant text-lg font-semibold mb-4 text-moonlight-pearl flex items-center">
+              <Waves className="w-4 h-4 mr-2 text-gentle-teal" />
               Company
             </h3>
             <ul className="space-y-2">
               <li>
                 <button 
                   onClick={() => scrollToSection('portfolio')}
-                  className="text-silver-pearl hover:text-cosmic-purple transition-colors hover:translate-x-1 duration-300"
+                  className="font-sans-airy text-pearl-shimmer hover:text-gentle-teal transition-colors hover:translate-x-1 duration-300"
                 >
                   Portfolio
                 </button>
@@ -130,23 +145,23 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('sound-demos')}
-                  className="text-silver-pearl hover:text-cosmic-purple transition-colors hover:translate-x-1 duration-300"
+                  className="font-sans-airy text-pearl-shimmer hover:text-gentle-teal transition-colors hover:translate-x-1 duration-300"
                 >
                   Sound Demos
                 </button>
               </li>
               <li>
-                <a href="#" className="text-silver-pearl hover:text-cosmic-purple transition-colors hover:translate-x-1 duration-300">
+                <a href="#" className="font-sans-airy text-pearl-shimmer hover:text-gentle-teal transition-colors hover:translate-x-1 duration-300">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-silver-pearl hover:text-cosmic-purple transition-colors hover:translate-x-1 duration-300">
+                <a href="#" className="font-sans-airy text-pearl-shimmer hover:text-gentle-teal transition-colors hover:translate-x-1 duration-300">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#" className="text-silver-pearl hover:text-cosmic-purple transition-colors hover:translate-x-1 duration-300">
+                <a href="#" className="font-sans-airy text-pearl-shimmer hover:text-gentle-teal transition-colors hover:translate-x-1 duration-300">
                   Careers
                 </a>
               </li>
@@ -155,28 +170,28 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-pearl-white flex items-center">
-              <Mail className="w-4 h-4 mr-2 text-divine-pink" />
+            <h3 className="font-serif-elegant text-lg font-semibold mb-4 text-moonlight-pearl flex items-center">
+              <Mail className="w-4 h-4 mr-2 text-golden-ray" />
               Contact
             </h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-siren-teal" />
-                <span className="text-silver-pearl">hello@sirens.agency</span>
+                <Mail className="w-4 h-4 text-soft-aqua" />
+                <span className="font-sans-airy text-pearl-shimmer">hello@sirens.agency</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-siren-teal" />
-                <span className="text-silver-pearl">+1 (555) 123-4567</span>
+                <Phone className="w-4 h-4 text-soft-aqua" />
+                <span className="font-sans-airy text-pearl-shimmer">+1 (555) 123-4567</span>
               </li>
               <li className="flex items-center space-x-3">
-                <MapPin className="w-4 h-4 text-siren-teal" />
-                <span className="text-silver-pearl">San Francisco, CA</span>
+                <MapPin className="w-4 h-4 text-soft-aqua" />
+                <span className="font-sans-airy text-pearl-shimmer">San Francisco, CA</span>
               </li>
             </ul>
 
             <button 
               onClick={() => scrollToSection('contact')}
-              className="mt-4 siren-button text-pearl-white px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:scale-105"
+              className="mt-4 ocean-button text-moonlight-pearl px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:scale-105"
             >
               Get Started
             </button>
@@ -184,23 +199,26 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-silver-pearl/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-silver-pearl text-sm">
+        <div className="border-t border-pearl-shimmer/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="font-sans-airy text-pearl-shimmer text-sm">
             © {currentYear} Sirens Agency. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-silver-pearl hover:text-siren-teal transition-colors text-sm">
+            <a href="#" className="font-sans-airy text-pearl-shimmer hover:text-soft-aqua transition-colors text-sm">
               Privacy Policy
             </a>
-            <a href="#" className="text-silver-pearl hover:text-siren-teal transition-colors text-sm">
+            <a href="#" className="font-sans-airy text-pearl-shimmer hover:text-soft-aqua transition-colors text-sm">
               Terms of Service
             </a>
-            <a href="#" className="text-silver-pearl hover:text-siren-teal transition-colors text-sm">
+            <a href="#" className="font-sans-airy text-pearl-shimmer hover:text-soft-aqua transition-colors text-sm">
               Cookie Policy
             </a>
           </div>
         </div>
       </div>
+
+      {/* Underwater Ambient Light */}
+      <div className="absolute inset-0 bg-underwater-light pointer-events-none opacity-10"></div>
     </footer>
   );
 };

@@ -46,18 +46,33 @@ const SoundDemos = () => {
   };
 
   return (
-    <section id="sound-demos" className="py-20 bg-cosmic-bg relative overflow-hidden">
-      {/* Mystical Particles */}
+    <section id="sound-demos" className="py-20 bg-ocean-gradient relative overflow-hidden">
+      {/* Underwater Light Rays */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(18)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="mystical-particle"
+            className="light-ray"
+            style={{
+              left: `${12 + i * 12}%`,
+              top: `${Math.random() * 60}%`,
+              animationDelay: `${i * 0.7}s`,
+              transform: `rotate(${-10 + Math.random() * 20}deg)`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Floating Underwater Particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="underwater-particle"
             style={{
               left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 12}s`,
-              animationDuration: `${8 + Math.random() * 10}s`
+              animationDelay: `${Math.random() * 8}s`,
+              animationDuration: `${10 + Math.random() * 8}s`
             }}
           />
         ))}
@@ -65,10 +80,10 @@ const SoundDemos = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-pearl-white mb-6">
-            Hear the <span className="siren-text-gradient">Magic</span>
+          <h2 className="font-serif-elegant text-4xl md:text-6xl font-bold text-moonlight-pearl mb-6">
+            Hear the <span className="ocean-text-gradient">Magic</span>
           </h2>
-          <p className="text-xl text-silver-pearl max-w-3xl mx-auto leading-relaxed">
+          <p className="font-sans-airy text-xl text-pearl-shimmer max-w-3xl mx-auto leading-relaxed">
             Experience our signature brand sounds that captivate audiences and create lasting emotional connections. 
             Each sound is crafted to embody your brand's unique personality.
           </p>
@@ -86,28 +101,28 @@ const SoundDemos = () => {
             return (
               <div
                 key={demo.id}
-                className="siren-card rounded-2xl p-6 transition-all duration-300 group hover:scale-105 siren-glow"
+                className="ocean-card rounded-2xl p-6 transition-all duration-300 group hover:scale-105 pearl-glow"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`text-sm font-medium text-pearl-white bg-gradient-to-r ${gradients[index]} px-3 py-1 rounded-full`}>
+                  <span className={`text-sm font-medium text-moonlight-pearl bg-gradient-to-r ${gradients[index]} px-3 py-1 rounded-full`}>
                     {demo.category}
                   </span>
-                  <span className="text-sm text-silver-pearl font-mono">
+                  <span className="text-sm text-pearl-shimmer font-mono">
                     {demo.duration}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-semibold text-pearl-white mb-2">
+                <h3 className="font-serif-elegant text-lg font-semibold text-moonlight-pearl mb-2">
                   {demo.title}
                 </h3>
-                <p className="text-silver-pearl text-sm mb-6 leading-relaxed">
+                <p className="font-sans-airy text-pearl-shimmer text-sm mb-6 leading-relaxed">
                   {demo.description}
                 </p>
 
                 <div className="flex items-center justify-between">
                   <button
                     onClick={() => handlePlayPause(demo.id)}
-                    className={`flex items-center space-x-2 bg-gradient-to-r ${gradients[index]} text-pearl-white px-4 py-2 rounded-lg transition-all duration-300 group-hover:shadow-lg hover:scale-105`}
+                    className={`flex items-center space-x-2 bg-gradient-to-r ${gradients[index]} text-moonlight-pearl px-4 py-2 rounded-lg transition-all duration-300 group-hover:shadow-lg hover:scale-105`}
                   >
                     {playingDemo === demo.id ? (
                       <Pause className="w-4 h-4" />
@@ -137,10 +152,10 @@ const SoundDemos = () => {
                 </div>
 
                 {playingDemo === demo.id && (
-                  <div className="mt-4 siren-card rounded-lg p-3">
-                    <div className="flex items-center space-x-2 text-siren-teal">
+                  <div className="mt-4 ocean-card rounded-lg p-3">
+                    <div className="flex items-center space-x-2 text-soft-aqua">
                       <Volume2 className="w-4 h-4 animate-pulse" />
-                      <div className="flex-1 bg-siren-black rounded-full h-2 overflow-hidden">
+                      <div className="flex-1 bg-ocean-depths rounded-full h-2 overflow-hidden">
                         <div className={`bg-gradient-to-r ${gradients[index]} h-full rounded-full animate-pulse`} style={{ width: '60%' }} />
                       </div>
                       <Sparkles className="w-4 h-4 animate-pulse" />
@@ -153,16 +168,19 @@ const SoundDemos = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-silver-pearl mb-6 flex items-center justify-center">
-            <Waves className="w-5 h-5 mr-2 text-siren-teal" />
+          <p className="font-sans-airy text-pearl-shimmer mb-6 flex items-center justify-center">
+            <Waves className="w-5 h-5 mr-2 text-soft-aqua" />
             Ready to create your signature sound?
-            <Waves className="w-5 h-5 ml-2 text-siren-teal" />
+            <Waves className="w-5 h-5 ml-2 text-soft-aqua" />
           </p>
-          <button className="siren-button text-pearl-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
+          <button className="ocean-button text-moonlight-pearl px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
             Start Your Sound Journey
           </button>
         </div>
       </div>
+
+      {/* Underwater Ambient Light */}
+      <div className="absolute inset-0 bg-underwater-light pointer-events-none opacity-20"></div>
     </section>
   );
 };
