@@ -12,7 +12,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-ocean-depths text-pearl-shimmer relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-mystic-waters to-ocean-depths text-pearl-shimmer relative overflow-hidden border-t border-soft-aqua/30">
       {/* Underwater Light Rays */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => (

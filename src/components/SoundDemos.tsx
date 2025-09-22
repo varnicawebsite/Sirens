@@ -46,7 +46,7 @@ const SoundDemos = () => {
   };
 
   return (
-    <section id="sound-demos" className="py-20 bg-ocean-gradient relative overflow-hidden">
+    <section id="sound-demos" className="py-20 bg-gradient-to-b from-deep-current via-mystic-waters to-aqua-dream relative overflow-hidden border-t border-pearl-shimmer/15">
       {/* Underwater Light Rays */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => (

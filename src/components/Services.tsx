@@ -55,7 +55,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-ocean-gradient relative overflow-hidden">
+    <section id="services" className="py-24 bg-gradient-to-b from-ocean-depths via-deep-current to-mystic-waters relative overflow-hidden border-t border-soft-aqua/10">
       {/* Underwater Light Rays */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(6)].map((_, i) => (

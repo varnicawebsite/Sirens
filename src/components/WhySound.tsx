@@ -30,7 +30,7 @@ const WhySound = () => {
   ];
 
   return (
-    <section id="why-sound" className="py-24 bg-gradient-to-b from-ocean-depths to-deep-current relative overflow-hidden">
+    <section id="why-sound" className="py-24 bg-gradient-to-b from-mystic-waters via-aqua-dream to-deep-current relative overflow-hidden border-t border-gentle-teal/20">
       {/* Underwater Light Rays */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(10)].map((_, i) => (

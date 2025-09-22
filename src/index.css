@@ -42,7 +42,6 @@ body {
   background: radial-gradient(circle, #0A1628 0%, #1B2B44 70%, #2A4A6B 100%);
   border-radius: 50%;
   border: 3px solid #7BC4C4;
-  animation: vinyl-spin 8s linear infinite;
   box-shadow: 
     0 0 40px rgba(123, 196, 196, 0.4),
     inset 0 0 30px rgba(0, 0, 0, 0.3);

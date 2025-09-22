@@ -51,7 +51,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-gradient-to-b from-deep-current to-mystic-waters relative overflow-hidden">
+    <section id="portfolio" className="py-24 bg-gradient-to-b from-aqua-dream via-mystic-waters to-deep-current relative overflow-hidden border-t border-soft-aqua/20">
       {/* Underwater Light Rays */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => (

@@ -22,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-mystic-waters to-ocean-depths relative overflow-hidden">
+    <section id="contact" className="py-20 bg-gradient-to-b from-deep-current via-ocean-depths to-mystic-waters relative overflow-hidden border-t border-golden-ray/25">
       {/* Underwater Light Rays */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(10)].map((_, i) => (
