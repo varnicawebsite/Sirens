@@ -45,6 +45,7 @@ body {
   box-shadow: 
     0 0 40px rgba(123, 196, 196, 0.4),
     inset 0 0 30px rgba(0, 0, 0, 0.3);
+  animation: vinyl-spin 8s linear infinite;
 }
 
 .ocean-vinyl-disc::before {
@@ -69,6 +70,71 @@ body {
   bottom: 12px;
   border: 1px solid rgba(123, 196, 196, 0.3);
   border-radius: 50%;
+}
+
+/* Wave Divider */
+.wave-divider {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+
+.wave-divider svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wave-divider .wave {
+  animation: wave-motion 6s ease-in-out infinite;
+}
+
+.wave-divider .wave:nth-child(2) {
+  animation-delay: -2s;
+  opacity: 0.7;
+}
+
+.wave-divider .wave:nth-child(3) {
+  animation-delay: -4s;
+  opacity: 0.5;
+}
+
+/* Floating Bubbles */
+.floating-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(123, 196, 196, 0.3));
+  animation: bubble-float 15s linear infinite;
+  opacity: 0.6;
+}
+
+.floating-bubble:nth-child(odd) {
+  animation-duration: 20s;
+  background: radial-gradient(circle at 30% 30%, rgba(244, 208, 63, 0.6), rgba(123, 196, 196, 0.2));
+}
+
+/* Ripple Effects */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(123, 196, 196, 0.3);
+  animation: ripple-expand 4s ease-out infinite;
+}
+
+.ripple-effect:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.ripple-effect:nth-child(3) {
+  animation-delay: 2s;
+}
+
+/* Kelp Sway Animation */
+.kelp-sway {
+  animation: kelp-motion 8s ease-in-out infinite;
+  transform-origin: bottom center;
 }
 
 /* Logo Container Inside Vinyl */
@@ -261,4 +327,82 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #5FB3B3, #4A90A4);
+}
+
+/* Animations */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes wave-flow {
+  0%, 100% { transform: translateX(0px) translateY(0px); }
+  25% { transform: translateX(10px) translateY(-5px); }
+  50% { transform: translateX(-5px) translateY(-10px); }
+  75% { transform: translateX(-10px) translateY(-5px); }
+}
+
+@keyframes pearl-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(123, 196, 196, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(123, 196, 196, 0.6); }
+}
+
+@keyframes underwater-drift {
+  0% { transform: translateY(100vh) translateX(-10px) rotate(0deg); }
+  100% { transform: translateY(-100px) translateX(10px) rotate(360deg); }
+}
+
+@keyframes vinyl-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes wave-motion {
+  0%, 100% { transform: translateX(0px) translateY(0px); }
+  50% { transform: translateX(-25px) translateY(-10px); }
+}
+
+@keyframes bubble-float {
+  0% { 
+    transform: translateY(100vh) translateX(0px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% { 
+    transform: translateY(-100px) translateX(50px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-expand {
+  0% { 
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  100% { 
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes kelp-motion {
+  0%, 100% { transform: rotate(0deg) scaleY(1); }
+  25% { transform: rotate(2deg) scaleY(1.05); }
+  50% { transform: rotate(0deg) scaleY(1); }
+  75% { transform: rotate(-2deg) scaleY(1.05); }
 }

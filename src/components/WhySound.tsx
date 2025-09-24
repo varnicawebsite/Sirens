@@ -30,7 +30,17 @@ const WhySound = () => {
   ];
 
   return (
-    <section id="why-sound" className="py-24 bg-gradient-to-b from-mystic-waters via-aqua-dream to-deep-current relative overflow-hidden border-t border-gentle-teal/20">
+    <section id="why-sound" className="relative overflow-hidden">
+      {/* Wave Divider */}
+      <div className="wave-divider bg-gradient-to-b from-aqua-dream to-mystic-waters">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="wave" fill="rgba(74, 144, 164, 0.6)"></path>
+          <path d="M1200,0H0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" className="wave" fill="rgba(74, 144, 164, 0.4)"></path>
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" className="wave" fill="rgba(74, 144, 164, 0.2)"></path>
+        </svg>
+      </div>
+      
+      <div className="py-24 bg-gradient-to-b from-mystic-waters via-aqua-dream to-deep-current relative">
       {/* Underwater Light Rays */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(10)].map((_, i) => (
@@ -49,7 +59,7 @@ const WhySound = () => {
 
       {/* Floating Underwater Particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <div
             key={i}
             className="underwater-particle"
@@ -57,6 +67,21 @@ const WhySound = () => {
               left: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 8}s`,
               animationDuration: `${10 + Math.random() * 8}s`
+            }}
+          />
+        ))}
+        
+        {/* Floating Bubbles */}
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={`bubble-${i}`}
+            className="floating-bubble"
+            style={{
+              left: `${Math.random() * 100}%`,
+              width: `${10 + Math.random() * 20}px`,
+              height: `${10 + Math.random() * 20}px`,
+              animationDelay: `${Math.random() * 15}s`,
+              animationDuration: `${15 + Math.random() * 10}s`
             }}
           />
         ))}
@@ -165,6 +190,7 @@ const WhySound = () => {
 
       {/* Underwater Ambient Light */}
       <div className="absolute inset-0 bg-underwater-light pointer-events-none opacity-25"></div>
+      </div>
     </section>
   );
 };

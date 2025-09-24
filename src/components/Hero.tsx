@@ -22,7 +22,7 @@ const Hero = () => {
 
       {/* Floating Underwater Particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
             className="underwater-particle"
@@ -30,6 +30,21 @@ const Hero = () => {
               left: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 12}s`,
               animationDuration: `${10 + Math.random() * 8}s`
+            }}
+          />
+        ))}
+        
+        {/* Floating Bubbles */}
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={`bubble-${i}`}
+            className="floating-bubble"
+            style={{
+              left: `${Math.random() * 100}%`,
+              width: `${8 + Math.random() * 16}px`,
+              height: `${8 + Math.random() * 16}px`,
+              animationDelay: `${Math.random() * 15}s`,
+              animationDuration: `${15 + Math.random() * 10}s`
             }}
           />
         ))}
